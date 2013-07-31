@@ -11,6 +11,7 @@
 		89090EC417A97DA900FCB217 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89090EC317A97DA900FCB217 /* MobileCoreServices.framework */; };
 		89090EC617A97DAE00FCB217 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89090EC517A97DAE00FCB217 /* SystemConfiguration.framework */; };
 		89090EEB17A982AC00FCB217 /* SBHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 89090EEA17A982AC00FCB217 /* SBHTTPClient.m */; };
+		89090EEE17A9D06C00FCB217 /* SBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89090EED17A9D06C00FCB217 /* SBRootViewController.m */; };
 		891B18AD17A88D530052CF06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18AC17A88D530052CF06 /* UIKit.framework */; };
 		891B18AF17A88D530052CF06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18AE17A88D530052CF06 /* Foundation.framework */; };
 		891B18B117A88D530052CF06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18B017A88D530052CF06 /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		89090EC517A97DAE00FCB217 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		89090EE917A982AC00FCB217 /* SBHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBHTTPClient.h; sourceTree = "<group>"; };
 		89090EEA17A982AC00FCB217 /* SBHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBHTTPClient.m; sourceTree = "<group>"; };
+		89090EEC17A9D06C00FCB217 /* SBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBRootViewController.h; sourceTree = "<group>"; };
+		89090EED17A9D06C00FCB217 /* SBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBRootViewController.m; sourceTree = "<group>"; };
 		891B18A917A88D530052CF06 /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891B18AC17A88D530052CF06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		891B18AE17A88D530052CF06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +163,8 @@
 			children = (
 				891B18BB17A88D530052CF06 /* SBAppDelegate.h */,
 				891B18BC17A88D530052CF06 /* SBAppDelegate.m */,
+				89090EEC17A9D06C00FCB217 /* SBRootViewController.h */,
+				89090EED17A9D06C00FCB217 /* SBRootViewController.m */,
 				891B18E117A88DE70052CF06 /* StageBlocAPI */,
 				891B18B317A88D530052CF06 /* Supporting Files */,
 			);
@@ -368,6 +373,7 @@
 				891B190117A88EA80052CF06 /* UIImageView+AFNetworking.m in Sources */,
 				891B190217A88EA80052CF06 /* AFOAuth2Client.m in Sources */,
 				89090EEB17A982AC00FCB217 /* SBHTTPClient.m in Sources */,
+				89090EEE17A9D06C00FCB217 /* SBRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

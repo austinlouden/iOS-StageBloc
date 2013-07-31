@@ -12,5 +12,6 @@
 @interface SBHTTPClient : AFHTTPClient
 
 + (SBHTTPClient *)sharedClient;
+- (void)authenicateWithUsername:(NSString*)username password:(NSString*)password;
 
 @end
