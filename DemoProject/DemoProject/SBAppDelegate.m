@@ -7,6 +7,8 @@
 //
 
 #import "SBAppDelegate.h"
+#import "SBHTTPClient.h"
+#import "AFOAuth2Client.h"
 
 @implementation SBAppDelegate
 
@@ -16,6 +18,26 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+
+    AFOAuth2Client *oauth2Client = [[AFOAuth2Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.stagebloc.com/3.0/"]
+                                                                  clientID:@"e5040f5fece582d6afc1795152970022"
+                                                                    secret:@"0a0f748f06ab17793888d886674a4d6f"];
+    [oauth2Client authenticateUsingOAuthWithPath:@"oauth2/token/" username:@"austinlouden@gmail.com" password:@"3LOFuWw1" scope:@"non-expiring" success:^(AFOAuthCredential *credential) {
+        NSLog(@"token: %@", credential.accessToken);
+        [AFOAuthCredential storeCredential:credential withIdentifier:oauth2Client.serviceProviderIdentifier];
+        
+        [[SBHTTPClient sharedClient] getPath:@"blog/list.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"error: %@", error);
+        }];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
+    
+    
     return YES;
 }
 

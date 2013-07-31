@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89090EC217A97DA100FCB217 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89090EC117A97DA100FCB217 /* Security.framework */; };
+		89090EC417A97DA900FCB217 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89090EC317A97DA900FCB217 /* MobileCoreServices.framework */; };
+		89090EC617A97DAE00FCB217 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89090EC517A97DAE00FCB217 /* SystemConfiguration.framework */; };
+		89090EEB17A982AC00FCB217 /* SBHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 89090EEA17A982AC00FCB217 /* SBHTTPClient.m */; };
 		891B18AD17A88D530052CF06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18AC17A88D530052CF06 /* UIKit.framework */; };
 		891B18AF17A88D530052CF06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18AE17A88D530052CF06 /* Foundation.framework */; };
 		891B18B117A88D530052CF06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18B017A88D530052CF06 /* CoreGraphics.framework */; };
@@ -44,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89090EC117A97DA100FCB217 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		89090EC317A97DA900FCB217 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		89090EC517A97DAE00FCB217 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		89090EE917A982AC00FCB217 /* SBHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBHTTPClient.h; sourceTree = "<group>"; };
+		89090EEA17A982AC00FCB217 /* SBHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBHTTPClient.m; sourceTree = "<group>"; };
 		891B18A917A88D530052CF06 /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891B18AC17A88D530052CF06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		891B18AE17A88D530052CF06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89090EC617A97DAE00FCB217 /* SystemConfiguration.framework in Frameworks */,
+				89090EC417A97DA900FCB217 /* MobileCoreServices.framework in Frameworks */,
+				89090EC217A97DA100FCB217 /* Security.framework in Frameworks */,
 				891B18AD17A88D530052CF06 /* UIKit.framework in Frameworks */,
 				891B18AF17A88D530052CF06 /* Foundation.framework in Frameworks */,
 				891B18B117A88D530052CF06 /* CoreGraphics.framework in Frameworks */,
@@ -132,6 +144,9 @@
 		891B18AB17A88D530052CF06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89090EC517A97DAE00FCB217 /* SystemConfiguration.framework */,
+				89090EC317A97DA900FCB217 /* MobileCoreServices.framework */,
+				89090EC117A97DA100FCB217 /* Security.framework */,
 				891B18AC17A88D530052CF06 /* UIKit.framework */,
 				891B18AE17A88D530052CF06 /* Foundation.framework */,
 				891B18B017A88D530052CF06 /* CoreGraphics.framework */,
@@ -189,6 +204,8 @@
 			children = (
 				891B18E217A88EA80052CF06 /* AFNetworking */,
 				891B18F617A88EA80052CF06 /* AFOAuth2Client */,
+				89090EE917A982AC00FCB217 /* SBHTTPClient.h */,
+				89090EEA17A982AC00FCB217 /* SBHTTPClient.m */,
 			);
 			path = StageBlocAPI;
 			sourceTree = "<group>";
@@ -350,6 +367,7 @@
 				891B190017A88EA80052CF06 /* AFXMLRequestOperation.m in Sources */,
 				891B190117A88EA80052CF06 /* UIImageView+AFNetworking.m in Sources */,
 				891B190217A88EA80052CF06 /* AFOAuth2Client.m in Sources */,
+				89090EEB17A982AC00FCB217 /* SBHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +542,7 @@
 				891B18DD17A88D530052CF06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		891B18DE17A88D530052CF06 /* Build configuration list for PBXNativeTarget "DemoProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +551,7 @@
 				891B18E017A88D530052CF06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
