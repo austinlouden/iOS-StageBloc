@@ -59,28 +59,46 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.c
     return NO;
 }
 
-- (void)authenicateWithUsername:(NSString*)username password:(NSString*)password
+/*
+ - (void)authenticateUsingOAuthWithUsername:(NSString *)username
+ password:(NSString *)password
+ success:(void (^)(AFOAuthAccount *account))success
+ failure:(void (^)(NSError *error))failure {
+ 
+ NSURL *url = [NSURL URLWithString:oClientBaseURLString];
+ AFOAuth2Client *OAuthClient = [[AFOAuth2Client alloc] initWithBaseURL:url];
+ 
+ [OAuthClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+ [OAuthClient authenticateUsingOAuthWithPath:@"oauth/token.json" username:username  password:password clientID:oClientID secret:oClientSecret success:^(AFOAuthAccount *account) {
+ [self setAuthorizationWithToken:account.credential.accessToken refreshToken:account.credential.refreshToken];
+ success(account);
+ } failure:^(NSError *error) {
+ failure(nil);
+ }];
+ }
+ */
+
+- (void)authenicateWithUsername:(NSString*)username
+                       password:(NSString*)password
+                        success:(void (^)(AFOAuthCredential *credential))success
+                        failure:(void (^)(NSError *error))failure
 {
     
     AFOAuth2Client *oauth2Client = [[AFOAuth2Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.stagebloc.com/3.0/"]
                                                                   clientID:kStageBlocConsumerKey
                                                                     secret:kStageBlocConsumerSecret];
     
-    [oauth2Client authenticateUsingOAuthWithPath:@"oauth2/token/" username:username password:password scope:@"non-expiring" success:^(AFOAuthCredential *credential) {
-        NSLog(@"token: %@", credential.accessToken);
-        [AFOAuthCredential storeCredential:credential withIdentifier:oauth2Client.serviceProviderIdentifier];
+    [oauth2Client authenticateUsingOAuthWithPath:@"oauth2/token/"
+                                        username:username password:password
+                                           scope:@"non-expiring"
+                                         success:^(AFOAuthCredential *credential) {
+        [
+         AFOAuthCredential storeCredential:credential withIdentifier:oauth2Client.serviceProviderIdentifier];
         [self setAuthorizationHeaderWithToken:[NSString stringWithFormat:@"%@", credential.accessToken]];
-        
-        [[SBHTTPClient sharedClient] getPath:@"blog/list.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@", responseObject);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"%@", operation.responseString);
-            NSLog(@"error: %@", error);
-            
-        }];
+        success(credential);
         
     } failure:^(NSError *error) {
-        NSLog(@"error: %@", error);
+        failure(error);
     }];
     
 }

@@ -51,7 +51,11 @@
 
 - (void)loginPressed
 {
-    [[SBHTTPClient sharedClient] authenicateWithUsername:usernameField.text password:passwordField.text];
+    [[SBHTTPClient sharedClient] authenicateWithUsername:usernameField.text password:passwordField.text success:^(AFOAuthCredential *credential) {
+        NSLog(@"%@", credential.accessToken);
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
     
 }
 

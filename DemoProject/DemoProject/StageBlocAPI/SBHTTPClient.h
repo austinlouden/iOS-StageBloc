@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
+#import "AFOAuth2Client.h"
 
 @interface SBHTTPClient : AFHTTPClient
 + (SBHTTPClient *)sharedClient;
-- (void)authenicateWithUsername:(NSString*)username password:(NSString*)password;
 - (BOOL)isAuthorized;
+- (void)authenicateWithUsername:(NSString*)username
+                       password:(NSString*)password
+                        success:(void (^)(AFOAuthCredential *credential))success
+                        failure:(void (^)(NSError *error))failure;
 @end
