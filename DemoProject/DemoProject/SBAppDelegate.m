@@ -22,6 +22,7 @@
 
     if(![[SBHTTPClient sharedClient] isAuthorized]) {
         // pop up login view
+        [[SBHTTPClient sharedClient] authenicateWithUsername:@"austinlouden@gmail.com" password:@"3LOFuWw1"];
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
