@@ -29,7 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [[SBHTTPClient sharedClient] authenicateWithUsername:@"austinlouden@gmail.com" password:@"3LOFuWw1"];
+    //[[SBHTTPClient sharedClient] authenicateWithUsername:@"hi@stagebloc.com" password:@"starwars"];
     
 }
 
