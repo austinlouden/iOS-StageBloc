@@ -7,7 +7,9 @@
 //
 
 #import "SBAppDelegate.h"
+
 #import "SBRootViewController.h"
+#import "SBLoginViewController.h"
 #import "SBHTTPClient.h"
 
 @implementation SBAppDelegate
@@ -19,14 +21,15 @@
     // Override point for customization after application launch.
     SBRootViewController *rootViewController = [[SBRootViewController alloc] init];
     self.window.rootViewController = rootViewController;
-
-    if(![[SBHTTPClient sharedClient] isAuthorized]) {
-        // pop up login view
-        [[SBHTTPClient sharedClient] authenicateWithUsername:@"austinlouden@gmail.com" password:@"3LOFuWw1"];
-    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    if(![[SBHTTPClient sharedClient] isAuthorized]) {
+        // pop up login view
+        SBLoginViewController *loginViewController = [[SBLoginViewController alloc] init];
+        [rootViewController presentViewController:loginViewController animated:NO completion:nil];
+    }
 
     return YES;
 }

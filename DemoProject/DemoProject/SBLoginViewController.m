@@ -7,9 +7,13 @@
 //
 
 #import "SBLoginViewController.h"
+#import "SBHTTPClient.h"
 
 @interface SBLoginViewController ()
-
+{
+    UITextField *usernameField;
+    UITextField *passwordField;
+}
 @end
 
 @implementation SBLoginViewController
@@ -26,7 +30,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    usernameField = [[UITextField alloc] initWithFrame:CGRectMake(20.0f, 100.0f, 280.0f, 30.0f)];
+    usernameField.placeholder = @"Username or Email";
+    usernameField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:usernameField];
+    
+    passwordField = [[UITextField alloc] initWithFrame:CGRectMake(20.0f, 140.0f, 280.0f, 30.0f)];
+    passwordField.placeholder = @"Password";
+    passwordField.secureTextEntry = YES;
+    passwordField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:passwordField];
+    
+    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [loginButton setFrame:CGRectMake(50.0f, 180.0f, 220.0f, 40.0f)];
+    [loginButton setTitle:@"Login" forState:UIControlStateNormal];
+    [loginButton addTarget:self action:@selector(loginPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:loginButton];
+}
+
+- (void)loginPressed
+{
+    [[SBHTTPClient sharedClient] authenicateWithUsername:usernameField.text password:passwordField.text];
+    
 }
 
 - (void)didReceiveMemoryWarning

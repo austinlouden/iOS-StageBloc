@@ -26,7 +26,6 @@
 		891B18CD17A88D530052CF06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B18AE17A88D530052CF06 /* Foundation.framework */; };
 		891B18D517A88D530052CF06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 891B18D317A88D530052CF06 /* InfoPlist.strings */; };
 		891B18D817A88D530052CF06 /* DemoProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891B18D717A88D530052CF06 /* DemoProjectTests.m */; };
-		8937456F17AABE710051FF00 /* AFOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937456E17AABE710051FF00 /* AFOAuth2Client.m */; };
 		8937458417AAC0110051FF00 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937457217AAC0110051FF00 /* AFHTTPClient.m */; };
 		8937458517AAC0110051FF00 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937457417AAC0110051FF00 /* AFHTTPRequestOperation.m */; };
 		8937458617AAC0110051FF00 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937457617AAC0110051FF00 /* AFImageRequestOperation.m */; };
@@ -37,6 +36,7 @@
 		8937458B17AAC0110051FF00 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937458117AAC0110051FF00 /* AFXMLRequestOperation.m */; };
 		8937458C17AAC0110051FF00 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937458317AAC0110051FF00 /* UIImageView+AFNetworking.m */; };
 		8937458F17AAC6BF0051FF00 /* SBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937458E17AAC6BF0051FF00 /* SBLoginViewController.m */; };
+		8937459317AAC75B0051FF00 /* AFOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937459217AAC75B0051FF00 /* AFOAuth2Client.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +76,6 @@
 		891B18D417A88D530052CF06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		891B18D617A88D530052CF06 /* DemoProjectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoProjectTests.h; sourceTree = "<group>"; };
 		891B18D717A88D530052CF06 /* DemoProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoProjectTests.m; sourceTree = "<group>"; };
-		8937456D17AABE710051FF00 /* AFOAuth2Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuth2Client.h; sourceTree = "<group>"; };
-		8937456E17AABE710051FF00 /* AFOAuth2Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth2Client.m; sourceTree = "<group>"; };
 		8937457117AAC0110051FF00 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		8937457217AAC0110051FF00 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		8937457317AAC0110051FF00 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -99,6 +97,8 @@
 		8937458317AAC0110051FF00 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		8937458D17AAC6BF0051FF00 /* SBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBLoginViewController.h; sourceTree = "<group>"; };
 		8937458E17AAC6BF0051FF00 /* SBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBLoginViewController.m; sourceTree = "<group>"; };
+		8937459117AAC75B0051FF00 /* AFOAuth2Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuth2Client.h; sourceTree = "<group>"; };
+		8937459217AAC75B0051FF00 /* AFOAuth2Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth2Client.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,21 +212,12 @@
 		891B18E117A88DE70052CF06 /* StageBlocAPI */ = {
 			isa = PBXGroup;
 			children = (
+				8937459017AAC75B0051FF00 /* AFOAuth2Client */,
 				8937457017AAC0110051FF00 /* AFNetworking */,
-				8937456C17AABE710051FF00 /* AFOAuth2Client */,
 				89090EE917A982AC00FCB217 /* SBHTTPClient.h */,
 				89090EEA17A982AC00FCB217 /* SBHTTPClient.m */,
 			);
 			path = StageBlocAPI;
-			sourceTree = "<group>";
-		};
-		8937456C17AABE710051FF00 /* AFOAuth2Client */ = {
-			isa = PBXGroup;
-			children = (
-				8937456D17AABE710051FF00 /* AFOAuth2Client.h */,
-				8937456E17AABE710051FF00 /* AFOAuth2Client.m */,
-			);
-			path = AFOAuth2Client;
 			sourceTree = "<group>";
 		};
 		8937457017AAC0110051FF00 /* AFNetworking */ = {
@@ -253,6 +244,15 @@
 				8937458317AAC0110051FF00 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		8937459017AAC75B0051FF00 /* AFOAuth2Client */ = {
+			isa = PBXGroup;
+			children = (
+				8937459117AAC75B0051FF00 /* AFOAuth2Client.h */,
+				8937459217AAC75B0051FF00 /* AFOAuth2Client.m */,
+			);
+			path = AFOAuth2Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +369,6 @@
 				891B18BD17A88D530052CF06 /* SBAppDelegate.m in Sources */,
 				89090EEB17A982AC00FCB217 /* SBHTTPClient.m in Sources */,
 				89090EEE17A9D06C00FCB217 /* SBRootViewController.m in Sources */,
-				8937456F17AABE710051FF00 /* AFOAuth2Client.m in Sources */,
 				8937458417AAC0110051FF00 /* AFHTTPClient.m in Sources */,
 				8937458517AAC0110051FF00 /* AFHTTPRequestOperation.m in Sources */,
 				8937458617AAC0110051FF00 /* AFImageRequestOperation.m in Sources */,
@@ -380,6 +379,7 @@
 				8937458B17AAC0110051FF00 /* AFXMLRequestOperation.m in Sources */,
 				8937458C17AAC0110051FF00 /* UIImageView+AFNetworking.m in Sources */,
 				8937458F17AAC6BF0051FF00 /* SBLoginViewController.m in Sources */,
+				8937459317AAC75B0051FF00 /* AFOAuth2Client.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
