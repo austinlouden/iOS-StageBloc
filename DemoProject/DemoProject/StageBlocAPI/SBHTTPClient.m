@@ -22,7 +22,7 @@
 static NSString * const kStageBlocConsumerKey = @"0351fbad394c8f0b6a383152a29c812b";
 static NSString * const kStageBlocConsumerSecret = @"8e83be9ff183046f9aa14f8ffe8604e3";
 
-static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.com/3.0/";
+static NSString * const kAFAppDotNetAPIBaseURLString = @"http://api.stagebloc.com/3.0/";
 
 @implementation SBHTTPClient
 
@@ -59,32 +59,13 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.c
     return NO;
 }
 
-/*
- - (void)authenticateUsingOAuthWithUsername:(NSString *)username
- password:(NSString *)password
- success:(void (^)(AFOAuthAccount *account))success
- failure:(void (^)(NSError *error))failure {
- 
- NSURL *url = [NSURL URLWithString:oClientBaseURLString];
- AFOAuth2Client *OAuthClient = [[AFOAuth2Client alloc] initWithBaseURL:url];
- 
- [OAuthClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
- [OAuthClient authenticateUsingOAuthWithPath:@"oauth/token.json" username:username  password:password clientID:oClientID secret:oClientSecret success:^(AFOAuthAccount *account) {
- [self setAuthorizationWithToken:account.credential.accessToken refreshToken:account.credential.refreshToken];
- success(account);
- } failure:^(NSError *error) {
- failure(nil);
- }];
- }
- */
-
 - (void)authenicateWithUsername:(NSString*)username
                        password:(NSString*)password
                         success:(void (^)(AFOAuthCredential *credential))success
                         failure:(void (^)(NSError *error))failure
 {
     
-    AFOAuth2Client *oauth2Client = [[AFOAuth2Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.stagebloc.com/3.0/"]
+    AFOAuth2Client *oauth2Client = [[AFOAuth2Client alloc] initWithBaseURL:[NSURL URLWithString:kAFAppDotNetAPIBaseURLString]
                                                                   clientID:kStageBlocConsumerKey
                                                                     secret:kStageBlocConsumerSecret];
     
@@ -92,8 +73,8 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.c
                                         username:username password:password
                                            scope:@"non-expiring"
                                          success:^(AFOAuthCredential *credential) {
-        [
-         AFOAuthCredential storeCredential:credential withIdentifier:oauth2Client.serviceProviderIdentifier];
+        
+        [AFOAuthCredential storeCredential:credential withIdentifier:oauth2Client.serviceProviderIdentifier];
         [self setAuthorizationHeaderWithToken:[NSString stringWithFormat:@"%@", credential.accessToken]];
         success(credential);
         

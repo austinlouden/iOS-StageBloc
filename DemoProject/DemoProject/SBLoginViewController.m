@@ -53,6 +53,7 @@
 {
     [[SBHTTPClient sharedClient] authenicateWithUsername:usernameField.text password:passwordField.text success:^(AFOAuthCredential *credential) {
         NSLog(@"%@", credential.accessToken);
+        [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];

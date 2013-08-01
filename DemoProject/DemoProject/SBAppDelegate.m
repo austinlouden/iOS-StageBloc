@@ -26,7 +26,7 @@
     [self.window makeKeyAndVisible];
     
     if(![[SBHTTPClient sharedClient] isAuthorized]) {
-        // pop up login view
+        // pop up the login view if the client is not authorized
         SBLoginViewController *loginViewController = [[SBLoginViewController alloc] init];
         [rootViewController presentViewController:loginViewController animated:NO completion:nil];
     }
