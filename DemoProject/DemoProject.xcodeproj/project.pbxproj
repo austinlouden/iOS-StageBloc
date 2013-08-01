@@ -36,6 +36,7 @@
 		8937458A17AAC0110051FF00 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937457F17AAC0110051FF00 /* AFURLConnectionOperation.m */; };
 		8937458B17AAC0110051FF00 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937458117AAC0110051FF00 /* AFXMLRequestOperation.m */; };
 		8937458C17AAC0110051FF00 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937458317AAC0110051FF00 /* UIImageView+AFNetworking.m */; };
+		8937458F17AAC6BF0051FF00 /* SBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937458E17AAC6BF0051FF00 /* SBLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		8937458117AAC0110051FF00 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		8937458217AAC0110051FF00 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		8937458317AAC0110051FF00 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		8937458D17AAC6BF0051FF00 /* SBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBLoginViewController.h; sourceTree = "<group>"; };
+		8937458E17AAC6BF0051FF00 /* SBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				891B18BC17A88D530052CF06 /* SBAppDelegate.m */,
 				89090EEC17A9D06C00FCB217 /* SBRootViewController.h */,
 				89090EED17A9D06C00FCB217 /* SBRootViewController.m */,
+				8937458D17AAC6BF0051FF00 /* SBLoginViewController.h */,
+				8937458E17AAC6BF0051FF00 /* SBLoginViewController.m */,
 				891B18E117A88DE70052CF06 /* StageBlocAPI */,
 				891B18B317A88D530052CF06 /* Supporting Files */,
 			);
@@ -374,6 +379,7 @@
 				8937458A17AAC0110051FF00 /* AFURLConnectionOperation.m in Sources */,
 				8937458B17AAC0110051FF00 /* AFXMLRequestOperation.m in Sources */,
 				8937458C17AAC0110051FF00 /* UIImageView+AFNetworking.m in Sources */,
+				8937458F17AAC6BF0051FF00 /* SBLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

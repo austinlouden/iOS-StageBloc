@@ -52,7 +52,6 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.c
 
 - (BOOL)isAuthorized
 {
-    NSLog(@"%@", [AFOAuthCredential retrieveCredentialWithIdentifier:@"api.stagebloc.com"].accessToken);
     if([AFOAuthCredential retrieveCredentialWithIdentifier:@"api.stagebloc.com"].accessToken) {
         return YES;
     }
