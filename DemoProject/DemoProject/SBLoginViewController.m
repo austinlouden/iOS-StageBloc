@@ -7,7 +7,7 @@
 //
 
 #import "SBLoginViewController.h"
-#import "SBHTTPClient.h"
+#import "SBAPIClient.h"
 
 @interface SBLoginViewController ()
 {
@@ -51,7 +51,7 @@
 
 - (void)loginPressed
 {
-    [[SBHTTPClient sharedClient] authenicateWithUsername:usernameField.text password:passwordField.text success:^(AFOAuthCredential *credential) {
+    [[SBAPIClient sharedClient] authenicateWithUsername:usernameField.text password:passwordField.text success:^(AFOAuthCredential *credential) {
         NSLog(@"%@", credential.accessToken);
         [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error) {

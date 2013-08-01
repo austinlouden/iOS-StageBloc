@@ -7,7 +7,6 @@
 //
 
 #import "SBRootViewController.h"
-#import "SBHTTPClient.h"
 
 @interface SBRootViewController ()
 
