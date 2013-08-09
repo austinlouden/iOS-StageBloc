@@ -11,10 +11,17 @@
 #import "AFOAuth2Client.h"
 
 @interface SBAPIClient : AFHTTPClient
+
 + (SBAPIClient *)sharedClient;
 - (BOOL)isAuthorized;
+
 - (void)authenicateWithUsername:(NSString*)username
                        password:(NSString*)password
                         success:(void (^)(AFOAuthCredential *credential))success
                         failure:(void (^)(NSError *error))failure;
+
+- (void)signupWithEmail:(NSString*)email
+               password:(NSString*)password
+                success:(void (^)(id responseObject))success
+                failure:(void (^)(NSError *error))failure;
 @end

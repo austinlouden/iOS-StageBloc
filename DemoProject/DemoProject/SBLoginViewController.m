@@ -58,6 +58,15 @@
         NSLog(@"%@", error);
     }];
     
+    
+    /*
+    [[SBAPIClient sharedClient] signupWithEmail:usernameField.text password:passwordField.text success:^(id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+     */
+    
 }
 
 - (void)didReceiveMemoryWarning

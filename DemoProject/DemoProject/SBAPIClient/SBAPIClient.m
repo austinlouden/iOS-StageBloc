@@ -22,7 +22,7 @@
 static NSString * const kStageBlocConsumerKey = @"0351fbad394c8f0b6a383152a29c812b";
 static NSString * const kStageBlocConsumerSecret = @"8e83be9ff183046f9aa14f8ffe8604e3";
 
-static NSString * const kAFAppDotNetAPIBaseURLString = @"http://api.stagebloc.com/3.0/";
+static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.com/3.0/";
 
 @implementation SBAPIClient
 
@@ -59,6 +59,8 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"http://api.stagebloc.co
     return NO;
 }
 
+#pragma mark - Login and Sign Up
+
 - (void)authenicateWithUsername:(NSString*)username
                        password:(NSString*)password
                         success:(void (^)(AFOAuthCredential *credential))success
@@ -79,6 +81,18 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"http://api.stagebloc.co
         success(credential);
         
     } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+- (void)signupWithEmail:(NSString*)email
+                  password:(NSString*)password
+                   success:(void (^)(id responseObject))success
+                   failure:(void (^)(NSError *error))failure
+{
+    [self postPath:@"user/edit.json" parameters:@{@"email": email, @"password" : password} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(error);
     }];
     
