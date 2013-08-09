@@ -22,7 +22,7 @@
 static NSString * const kStageBlocConsumerKey = @"0351fbad394c8f0b6a383152a29c812b";
 static NSString * const kStageBlocConsumerSecret = @"8e83be9ff183046f9aa14f8ffe8604e3";
 
-static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.com/3.0/";
+static NSString * const kSBAPIBaseURLString = @"https://api.stagebloc.com/3.0/";
 
 @implementation SBAPIClient
 
@@ -30,7 +30,7 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.c
     static SBAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[SBAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kAFAppDotNetAPIBaseURLString]];
+        _sharedClient = [[SBAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kSBAPIBaseURLString]];
     });
     
     return _sharedClient;
@@ -67,7 +67,7 @@ static NSString * const kAFAppDotNetAPIBaseURLString = @"https://api.stagebloc.c
                         failure:(void (^)(NSError *error))failure
 {
     
-    AFOAuth2Client *oauth2Client = [[AFOAuth2Client alloc] initWithBaseURL:[NSURL URLWithString:kAFAppDotNetAPIBaseURLString]
+    AFOAuth2Client *oauth2Client = [[AFOAuth2Client alloc] initWithBaseURL:[NSURL URLWithString:kSBAPIBaseURLString]
                                                                   clientID:kStageBlocConsumerKey
                                                                     secret:kStageBlocConsumerSecret];
     
