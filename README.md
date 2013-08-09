@@ -20,9 +20,9 @@ The SBAPIClient can easily be dropped into an existing application.
 
 You can interact with StageBloc API anywhere in your application by using the `SBAPIClient` singleton. Simply `#import "SBAPIClient.h` and use the provided class methods with `[SBAPICLient sharedClient]`.
 
-### Authentication
+### Sign In
 
-StageBloc uses OAuth 2.0 for authentication. The method below will grant a user an OAuth token and automatically store it in the Keychain.
+StageBloc uses OAuth 2.0 for authentication. The method below will grant a user an OAuth token and automatically store it in the Keychain, as well as appending the appropriate headers for future API requests.
 ```objc
 [[SBAPIClient sharedClient] authenicateWithUsername:username 
                                            password:password 
@@ -35,3 +35,36 @@ StageBloc uses OAuth 2.0 for authentication. The method below will grant a user 
 }];
 ```
 On startup, you can check if a user is authorized with `[[SBAPIClient sharedClient] isAuthorized]` and display a login modal accordingly.
+
+### Sign Up
+
+Sign up is similar to sign in and will return a new `user` object in JSON format.
+
+```objc
+[[SBAPIClient sharedClient] signupWithEmail:username 
+                                   password:passwordField 
+                                    success:^(id responseObject) 
+{
+        NSLog(@"%@", responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+}];
+```
+
+### Everything Else
+
+Once a user is authenticated, all interations can be handled with AFNetworking's `getPath` and `postPath` methods. The path is a URL relative to the base URL specified in the `SBAPIClient.m` file. Any parameters can be passed as an `NSDictionary`.
+
+#### An example request
+
+```objc
+[[SBAPIClient sharedClient] getPath:@"photos/list.json" 
+                         parameters:@{@"album_id": @2368} 
+                            success:^(AFHTTPRequestOperation *operation, id responseObject) 
+{
+            NSLog(@"%@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@", error);
+}];
+```
+
