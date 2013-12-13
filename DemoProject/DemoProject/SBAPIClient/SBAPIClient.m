@@ -10,17 +10,10 @@
 #import "AFJSONRequestOperation.h"
 #import "AFOAuth2Client.h"
 
-// production keys
-// client id: 0351fbad394c8f0b6a383152a29c812b
-// client secret: 8e83be9ff183046f9aa14f8ffe8604e3
 
-//development keys
-// client id: 28d5a7bdff3f3de38387de64ee0f5947
-// client secret: ec1e0919c732f228066e7ca0a36e4d18
-
-//#error Enter your StageBloc API credentials below, then comment out this line
-static NSString * const kStageBlocConsumerKey = @"0351fbad394c8f0b6a383152a29c812b";
-static NSString * const kStageBlocConsumerSecret = @"8e83be9ff183046f9aa14f8ffe8604e3";
+#error Enter your StageBloc API credentials below, then comment out this line
+static NSString * const kStageBlocConsumerKey = @"";
+static NSString * const kStageBlocConsumerSecret = @"";
 
 static NSString * const kSBAPIBaseURLString = @"https://api.stagebloc.com/3.0/";
 
